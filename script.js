@@ -335,7 +335,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                         <strong>Email:</strong> <a href="mailto:support@tourismindia.com">support@tourismindia.com</a>
                                     </p>
                                     <p style="font-size: 1.2em;">
-                                        <strong>Phone:</strong> +91-123-456-7890
+                                        <strong>Phone:</strong> +91 8144219523
                                     </p>
                                 </div>
                             </section>
