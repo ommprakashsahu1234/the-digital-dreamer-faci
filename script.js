@@ -1,3 +1,5 @@
+window.onload=alert("Last Updated : 01.09.2024");
+
 
 function getLocation() {
     if (navigator.geolocation) {
