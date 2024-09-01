@@ -1,8 +1,18 @@
+a:visited{
+    color: yellow;
+}
+a:active{
+    color: greenyellow;
+}
+a:link{
+    color: aqua;
+}
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color:white;
 }
 
 .container {
@@ -48,7 +58,7 @@ nav ul li a {
 main {
     padding: 20px 0;
     margin:30px;
-    background-color: #0cff71;;
+    background-color: #040e46;;
 }
 
 .section {
