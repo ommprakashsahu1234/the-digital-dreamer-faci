@@ -1,5 +1,4 @@
-// Wait for the DOM to fully load before running the script
-// Function to get user's location and fetch address from Google Maps
+
 function getLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition, showError);
@@ -8,14 +7,13 @@ function getLocation() {
     }
 }
 
-// Function to handle the position data
 function showPosition(position) {
     var lat = position.coords.latitude;
     var lon = position.coords.longitude;
     var latlon = new google.maps.LatLng(lat, lon);
-    
+
     var geocoder = new google.maps.Geocoder();
-    geocoder.geocode({ 'latLng': latlon }, function(results, status) {
+    geocoder.geocode({ 'latLng': latlon }, function (results, status) {
         if (status === google.maps.GeocoderStatus.OK) {
             if (results[1]) {
                 document.getElementById("location").innerHTML = "Your current address is: " + results[1].formatted_address;
@@ -27,10 +25,8 @@ function showPosition(position) {
         }
     });
 }
-
-// Function to handle errors
 function showError(error) {
-    switch(error.code) {
+    switch (error.code) {
         case error.PERMISSION_DENIED:
             document.getElementById("location").innerHTML = "User denied the request for Geolocation.";
             break;
@@ -47,28 +43,26 @@ function showError(error) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Select all navigation links
+   
     const navLinks = document.querySelectorAll('nav ul li a');
 
-    // Select the main content area
+   
     const mainContent = document.querySelector('main');
 
-    // Add click event listeners to each navigation link
+   
     navLinks.forEach(link => {
         link.addEventListener('click', (event) => {
-            event.preventDefault(); // Prevent the default anchor behavior
+            event.preventDefault(); 
 
-            // Get the href attribute of the clicked link to determine the section
-            const sectionId = link.getAttribute('href').substring(1); // Remove the '#' character
+            const sectionId = link.getAttribute('href').substring(1); 
 
-            // Load the new content for the main section based on the sectionId
+            
+            
             loadContent(sectionId);
         });
     });
 
-    // Function to load content based on sectionId
     function loadContent(sectionId) {
-        // Define the content for each section
         let content = '';
 
         switch (sectionId) {
@@ -335,7 +329,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                         <strong>Email:</strong> <a href="mailto:support@tourismindia.com">support@tourismindia.com</a>
                                     </p>
                                     <p style="font-size: 1.2em;">
-                                        <strong>Phone:</strong> +91 8144219523
+                                        <strong>Phone:</strong> <a onclick="window.location.href = 'tel:1234567890';">+91 8144219523</a>
                                     </p>
                                 </div>
                             </section>
