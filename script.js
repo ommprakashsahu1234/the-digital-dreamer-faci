@@ -1,6 +1,4 @@
-window.onload=alert("Last Updated : 01.09.2024");
-
-
+window.onload = alert("Last Updated : 01.09.2024");
 function getLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition, showError);
@@ -45,21 +43,21 @@ function showError(error) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-   
+
     const navLinks = document.querySelectorAll('nav ul li a');
 
-   
+
     const mainContent = document.querySelector('main');
 
-   
+
     navLinks.forEach(link => {
         link.addEventListener('click', (event) => {
-            event.preventDefault(); 
+            event.preventDefault();
 
-            const sectionId = link.getAttribute('href').substring(1); 
+            const sectionId = link.getAttribute('href').substring(1);
 
-            
-            
+
+
             loadContent(sectionId);
         });
     });
@@ -339,6 +337,64 @@ document.addEventListener('DOMContentLoaded', () => {
                     </section>
                 `;
                 break;
+                case 'admin':
+                    var un = prompt("Enter User Name : ");
+                    var pw = prompt("Enter the Admin Code");
+                
+                    if ((un == "Omm" && pw == "Omm94") || 
+                        (un == "Pritiranjan" && pw == "Priiti103") || 
+                        (un == "Ankita" && pw == "Ankita10") || 
+                        (un == "Prasanjit" && pw == "Prasanjit99") || 
+                        (un == "Mrutyunjay" && pw == "Mrutyunjay90") || 
+                        (un == "Nihar" && pw == "Nihar14")) {
+                
+                        alert("Admin Verified.");
+                
+                        content = `
+                        <section id="admin" class="section">
+                            <div class="container">
+                                <h2>Admin</h2>
+                                <section id="admin-side" class="section">
+                                    <div class="container">
+                                        <h2 style="font-size: 2em; font-weight: bold;">Admin</h2>
+                                        <p style="font-size: 1.2em;">
+                                            These details are the ref for the Admin of <b style="color: yellow;">The Digital Dreamers</b> for the development of the Site.
+                                        </p>
+                                        <ul style="font-size: 1.2em;" type="square">
+                                            <li>Last Updated : 01.09.2024</li>
+                                            <li>Admin Name : ${un}</li>
+                                            <li>Admin Code : ${pw}</li>
+                                            <li>Team : The Digital Dreamers</li>
+                                            <li><a href="mailto:opsommprakash+DigitalDreamersAdminSupport@outlook.com">Admin Support</a></li>
+                                            <li>Hash</li>
+                                        </ul>
+                                    </div>
+                                </section>
+                            </div>
+                        </section>
+                        `;
+                    }
+                else {
+                    alert("Incorrect Admin Hash.");
+                    content = `
+                    <section id="admin" class="section">
+                    <div class="container">
+                    <h2><b style="color: red;">Incorrect Admin Hash</b></h2>
+                    <section id="admin-side" class="section">
+                    <div class="container">
+                    <h2 style="font-size: 2em; font-weight: bold;">Admin</h2>
+                                        <p style="font-size: 1.2em;">
+                                            This Page is only for the Admins of this Website. Kindly Enter Correct Admin hash to see this Page. <b style="color: yellow;">The Digital Dreamers</b> for the development of the Site.
+                                            </p>
+                                            
+                                            <p> Contents not available. Only Admin can see it.</p>
+                                            </div>
+                                            </section>
+                            </div>
+                    </section>
+                            `;
+                        }
+            break;
             default:
                 content = `
                     <section id="home" class="section">
